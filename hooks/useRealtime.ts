@@ -11,10 +11,10 @@ export default function useRealtime() {
 
   useEffect(() => {
     // initial fetch
-    favorites.forEach((city) => dispatch(fetchWeather(city)));
+    favorites.forEach((city: string) => dispatch(fetchWeather(city)));
 
     intervalRef.current = window.setInterval(() => {
-      favorites.forEach((city) => dispatch(fetchWeather(city)));
+      favorites.forEach((city: string) => dispatch(fetchWeather(city)));
     }, 60_000);
 
     return () => {
